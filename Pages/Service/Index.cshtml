@@ -1,0 +1,18 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model BD9.Pages.Service.IndexModel
+@*@Styles.Render("~/Content/css")*@
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+<h2>Список Услуг</h2>
+<table>
+    <tr><th>Наименование услуги</th><th>Номер модели</th><th>Цена</th></tr>
+    @foreach (var user in Model.Servises)
+    {
+        <tr>
+            <td>@user.ServiceName</td>
+            <td>@user.serviceModels</td>
+            <td>@user.Price</td>
+        </tr>
+    }
+</table>

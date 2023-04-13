@@ -1,0 +1,28 @@
+﻿@page
+@model BD9.Pages.Clients.CreateModel
+@*@Styles.Render("~/Content/css")*@
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+ <h2>Добавление нового клиента</h2>
+<form method="post">
+    <p>
+        <label>Фамилия</label><br />
+        <input name="surname" />
+    </p>
+    <p><label>Имя</label><br />
+        <input name="name" />
+    </p>
+    <p>
+        <label>Отчество</label><br />
+        <input name="lastname" />
+    </p>
+    <p>
+        <label>Электронная почта</label><br />
+        <input name="email" />
+    </p>
+    <p>
+        <label>Телефон</label><br />
+        <input name="phone" type="number" />
+    </p>
+    <input type="submit" value="Отправить" />
+</form>   
+

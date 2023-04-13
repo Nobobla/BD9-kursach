@@ -1,0 +1,30 @@
+﻿@page "{id:int}"
+@model BD9.Pages.Clients.EditModel
+@*@Styles.Render("~/Content/css")*@
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+<h2>Редактирование пользователя</h2>
+
+<form method="post">
+    <input name="id" value="@Model.Person?.Id" type="hidden" />
+    <p>
+        <label>Фамилия</label><br />
+        <input name="surname" value="@Model.Person?.Surname"/>
+    </p>
+    <p>
+        <label>Имя</label><br />
+        <input name="name" value="@Model.Person?.Name" />
+    </p>
+    <p>
+        <label>Отчестов</label><br />
+        <input name="lastname" value="@Model.Person?.Lastname"/>
+    </p>
+    <p>
+        <label>Электронная почта</label><br />
+        <input name="email" value="@Model.Person?.Email"/>
+    </p>
+    <p>
+        <label>Телефон</label><br />
+        <input name="phone" value="@Model.Person?.Phone" type="number" />
+    </p>
+    <input type="submit" value="Сохранить" />
+</form>
