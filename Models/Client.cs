@@ -11,6 +11,6 @@ namespace BD9.Models
         public string? Email { get; set; }
         public long? Phone { get; set; }
 
-        public List<Client> Clients { get; set; } = new();
+        public List<Order> Orders { get; set; } = new();
     }
 }

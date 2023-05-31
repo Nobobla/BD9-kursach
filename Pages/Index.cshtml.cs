@@ -31,7 +31,7 @@ namespace BD9.Pages.Orders
         }
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
-            var user = await context.Orders.FindAsync(id);
+            var user = await context.Orders.Include(x => x.Service).Include(x => x.Emp).FirstOrDefaultAsync(x => x.id == id);
 
             if (user != null)
             {
