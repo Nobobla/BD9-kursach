@@ -3,20 +3,32 @@
 
 @model BD9.Pages.Orders.IndexModel
 @*@Styles.Render("~/Content/css")*@
-<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+@*<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />*@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-..." crossorigin="anonymous" />
 <h2>Список Заказов</h2>
 <table>
     <tr><th>Наименование услуги</th><th>Клиент</th><th>Мастер</th><th>Дата принятия заказа</th><th>Гарантия</th><th>Описание состояния телефона</th><th>Жалоба</th></tr>
     @foreach (var user in Model.Orders)
     {
             <tr>
-                <td>@user.ServiceId</td>
-                <td>@user.ClientId</td>
-                <td>@user.EmploeeId</td>            
+                <td>@user?.Service?.ServiceName</td>
+                <td>@user.Client?.Surname</td>
+                <td>@user.Emp?.ContactInform?.Surname</td>            
                 <td>@user.Warraty</td>
                 <td>@user.Description</td>
                 <td>@user.DateIssue</td>
-                <td>@user.ComplaintId</td>
+                <td>@user.Complaints?.Discription</td>
+                    <td>
+                    <form method="post">
+                        <a asp-page="Edit" asp-route-id="@user.id">Изменить</a>
+                        <button type="submit" asp-page-handler="delete" asp-route-id="@user.id">
+                            Удалить
+                        </button>
+                    </form>
+                </td>
             </tr>
     }
 </table>
+<form method="post" asp-page-handler="ExportToExcel">
+    <button type="submit" class="btn btn-primary">Экспорт в Excel</button>
+</form>

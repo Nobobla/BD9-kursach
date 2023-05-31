@@ -1,0 +1,35 @@
+﻿@page
+@model BD9.Pages.EditModel
+@{
+}
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+<h2>Редактирование Заказа</h2>
+
+<form method="post">
+    <input name="id" value="@Model.Order?.id" type="hidden" />
+    <p>
+        <label>Услуга</label><br />
+        <input name="serv" value="@Model.Order?.Service"/>
+    </p>
+    <p>
+        <label>Фамилия клиента</label><br />
+        <input name="name" value="@Model.Order.Client" />
+    </p>
+    <p>
+        <label>Мастер</label><br />
+        <input name="Ename" value="@Model.Order?.Emp"/>
+    </p>
+    <p>
+        <label>Гарантия</label><br />
+        <input name="war" value="@Model.Order?.Warraty"/>
+    </p>
+    <p>
+        <label>Описание</label><br />
+        <input name="des" value="@Model.Order?.Description" />
+    </p>
+    <p>
+        <label>Жалоба</label><br />
+        <input name="com" value="@Model.Order?.Complaints"/>
+    </p>
+    <input type="submit" value="Сохранить" />
+</form>

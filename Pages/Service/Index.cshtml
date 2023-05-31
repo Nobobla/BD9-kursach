@@ -4,15 +4,17 @@
 @model BD9.Pages.Service.IndexModel
 @*@Styles.Render("~/Content/css")*@
 <link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
-<h2>Список Услуг</h2>
+<h2>Список Услуг и моделей</h2>
 <table>
-    <tr><th>Наименование услуги</th><th>Номер модели</th><th>Цена</th></tr>
-    @foreach (var user in Model.Servises)
+    <tr><th>Наименование услуги</th><th>Производитель</th><th>Наименование модели</th><th>Заметка</th><th>Цена</th></tr>
+    @foreach (var user in Model.ServiceModels)
     {
         <tr>
-            <td>@user.ServiceName</td>
-            <td>@user.serviceModels</td>
-            <td>@user.Price</td>
+            <td>@user?.Services?.ServiceName</td>
+            <td>@user?.model?.Manufacture</td>
+            <td>@user?.model?.ModelName</td>
+            <td>@user?.Note</td>
+            <td>@user?.Services?.Price</td>
         </tr>
     }
 </table>

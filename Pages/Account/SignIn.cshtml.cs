@@ -105,18 +105,7 @@ namespace BD9.Pages.Account
 
         [BindProperty]
         public string? ConfirmPassword { get; set; }
-        [BindProperty]
-        public string? Name { get; set; }
-        [BindProperty]
-        public int? Age { get; set; }
-        [BindProperty]
-        public double? Weight { get; set; }
-        [BindProperty]
-        public double? Height { get; set; }
-        [BindProperty]
-        public string? Sex { get; set; }
-        //[BindProperty]
-        //public PhysicalActivity PhysicalActivity { get; set; }
+
 
        
         public string ReturnUrl { get; set; }

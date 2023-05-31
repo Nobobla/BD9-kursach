@@ -12,22 +12,24 @@ namespace BD9.Pages.Service
     public class IndexModel : PageModel
     {
         ApplicationContext context;
-        public List<BD9.Models.Service> Servises { get; private set; } = new();
+        public List<BD9.Models.ServiceModel> ServiceModels { get; private set; } = new();
         public IndexModel(ApplicationContext db)
         {
             context = db;
         }
         public void OnGet()
         {
-            Servises = context.Services.AsNoTracking().ToList();
+            ServiceModels = context.ServiceModels
+                .Include(x => x.model)
+                .Include(x => x.Services).AsNoTracking().ToList();
         }
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
-            var user = await context.Services.FindAsync(id);
+            var user = await context.ServiceModels.FindAsync(id);
 
             if (user != null)
             {
-                context.Services.Remove(user);
+                context.ServiceModels.Remove(user);
                 await context.SaveChangesAsync();
             }
 
