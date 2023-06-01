@@ -4,7 +4,7 @@ namespace BD9.Models
 {
    public class Client
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string? Surname { get; set; }
         public string? Name { get; set; } // имя пользователя
         public string? Lastname { get; set; }

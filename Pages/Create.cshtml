@@ -5,32 +5,40 @@
 <link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
  <h2>Добавление нового Заказа</h2>
 <form method="post">
+    <select asp-for="order.ServiceId" class="form-control"
+            asp-items="@Model.ServicesSL">
+        <option value="">Выбор услуги</option>
+    </select>
+    <span asp-validation-for="order.ServiceId" class="text-danger" />
+
+    <select asp-for="order.ClientId" class="form-control"
+            asp-items="@Model.ClientsSL">
+        <option value="">Выбор клиента</option>
+    </select>
+    <span asp-validation-for="order.ClientId" class="text-danger" />
+
+    <select asp-for="order.EmploeeId" class="form-control"
+            asp-items="@Model.EmpsSL">
+        <option value="">Выбор мастера</option>
+    </select>
+    <span asp-validation-for="order.EmploeeId" class="text-danger" />
+
     <p>
-        <label>Услуга</label><br />
-        <input name="serv" />
-    </p>
-    <p><label>Клиент</label><br />
-        <input name="name" />
+        <label asp-for="order.Warranty">Гарантия</label><br />
+        <input asp-for="order.Warranty" />
     </p>
     <p>
-        <label>Мастер</label><br />
-        <input name="mast" />
+        <label asp-for="order.Description">Описание</label><br />
+        <input asp-for="order.Description" />
     </p>
     <p>
-        <label>Гарантия</label><br />
-        <input name="war" />
+        <label asp-for="order.DateIssue">Дата</label><br />
+        <input asp-for="order.DateIssue" />
     </p>
-    <p>
-        <label>Описание</label><br />
-        <input name="descr"/>
-    </p>
-    <p>
-        <label>Дата</label><br />
-        <input name="date" type="datetime" />
-    </p> 
-    <p>
-        <label>Жалобы</label><br />
-        <input name="comp"/>
-    </p>
+    <select asp-for="order.ComplaintId" class="form-control"
+            asp-items="@Model.ComplaintsSL">
+        <option value="">Выбор жалобы</option>
+    </select>
+    <span asp-validation-for="order.ComplaintId" class="text-danger" />
     <input type="submit" value="Отправить" />
 </form>   

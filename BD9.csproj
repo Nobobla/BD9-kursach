@@ -4,6 +4,7 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
+		<Configurations>Debug;Release;Bd</Configurations>
 	</PropertyGroup>
 
 	<ItemGroup>

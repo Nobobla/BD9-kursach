@@ -25,7 +25,7 @@ namespace BD9.Pages.Clients
         }
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
-            var user = await context.Clients.Include(x => x.Orders).FirstOrDefaultAsync(x => x.Id == id);
+            var user = await context.Clients.Include(x => x.Orders).FirstOrDefaultAsync(x => x.id == id);
 
             if (user != null)
             {

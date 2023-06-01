@@ -9,7 +9,7 @@ namespace BD9.Models
         public int? ServiceId { get; set; }//внешний ключ1
         public Service? Service { get; set; }
 
-        public string? Warraty { get; set; }
+        public string? Warranty { get; set; }
 
         public int? EmploeeId { get; set; }//внешний ключ2
         public Emploee? Emp { get; set; }

@@ -65,10 +65,10 @@ namespace BD9.Models
             var com2 = new Complaint() { Discription = "От мастера плохо пахло", ComplaintType = "Значительная" };
             await db.Complaints.AddRangeAsync(com1,com2);
 
-            var o1 = new Order() { Service = s1, Warraty = "Нет", Emp = Ep1, Client = cl1, DateIssue = new DateTime(2022, 12, 03), Description = "Не работает экран, внешнее состояние без нареканий" };
-            var o2 = new Order() { Service = s2, Warraty = "Нет", Emp = Ep3, Client = cl2, DateIssue = new DateTime(2022, 12, 02), Description = "Не работает аккумулятор, внешнее состояние без нареканий"};
-            var o3 = new Order() { Service = s3, Warraty = "Нет", Emp = Ep3, Client = cl3, DateIssue = new DateTime(2022, 12, 01), Description = "Не работает материнская плата, внешнее состояние без нареканий", Complaints = com1 };
-            var o4 = new Order() { Service = s4, Warraty = "Да", Emp = Ep1, Client = cl4, DateIssue = new DateTime(2022, 12, 03), Description = "Не работает камера, внешнее состояние без нареканий",Complaints =com2 };
+            var o1 = new Order() { Service = s1, Warranty = "Нет", Emp = Ep1, Client = cl1, DateIssue = new DateTime(2022, 12, 03), Description = "Не работает экран, внешнее состояние без нареканий" };
+            var o2 = new Order() { Service = s2, Warranty = "Нет", Emp = Ep3, Client = cl2, DateIssue = new DateTime(2022, 12, 02), Description = "Не работает аккумулятор, внешнее состояние без нареканий"};
+            var o3 = new Order() { Service = s3, Warranty = "Нет", Emp = Ep3, Client = cl3, DateIssue = new DateTime(2022, 12, 01), Description = "Не работает материнская плата, внешнее состояние без нареканий", Complaints = com1 };
+            var o4 = new Order() { Service = s4, Warranty = "Да", Emp = Ep1, Client = cl4, DateIssue = new DateTime(2022, 12, 03), Description = "Не работает камера, внешнее состояние без нареканий",Complaints =com2 };
             await db.Orders.AddRangeAsync(o1, o2, o3, o4);
 
 
