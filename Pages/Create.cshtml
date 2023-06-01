@@ -1,0 +1,36 @@
+﻿@page
+@model BD9.Pages.CreateModel
+@{
+}
+<link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
+ <h2>Добавление нового Заказа</h2>
+<form method="post">
+    <p>
+        <label>Услуга</label><br />
+        <input name="serv" />
+    </p>
+    <p><label>Клиент</label><br />
+        <input name="name" />
+    </p>
+    <p>
+        <label>Мастер</label><br />
+        <input name="mast" />
+    </p>
+    <p>
+        <label>Гарантия</label><br />
+        <input name="war" />
+    </p>
+    <p>
+        <label>Описание</label><br />
+        <input name="descr"/>
+    </p>
+    <p>
+        <label>Дата</label><br />
+        <input name="date" type="datetime" />
+    </p> 
+    <p>
+        <label>Жалобы</label><br />
+        <input name="comp"/>
+    </p>
+    <input type="submit" value="Отправить" />
+</form>   
