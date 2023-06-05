@@ -70,13 +70,13 @@ namespace BD9.Pages.Orders
                 int row = 2;
                 foreach (var ord in allOrders)
                 {
-                    worksheet.Cells[row, 1].Value = ord.Service.ServiceName;
-                    worksheet.Cells[row, 2].Value = ord.Client.Surname;
-                    worksheet.Cells[row, 3].Value = ord.Emp.ContactInform.Name;
+                    worksheet.Cells[row, 1].Value = ord.Service?.ServiceName;
+                    worksheet.Cells[row, 2].Value = ord.Client?.Surname;
+                    worksheet.Cells[row, 3].Value = ord.Emp?.ContactInform?.Name;
                     worksheet.Cells[row, 4].Value = ord.Warranty;
                     worksheet.Cells[row, 5].Value = ord.Description;
                     worksheet.Cells[row, 6].Value = ord.DateIssue;
-                    worksheet.Cells[row, 7].Value = ord.Complaints.Discription;
+                    worksheet.Cells[row, 7].Value = ord.Complaints?.Discription;
 
                     row++;
                 }
