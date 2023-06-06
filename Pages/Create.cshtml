@@ -23,22 +23,25 @@
     </select>
     <span asp-validation-for="order.EmploeeId" class="text-danger" />
 
-    <p>
-        <label asp-for="order.Warranty">Гарантия</label><br />
-        <input asp-for="order.Warranty" />
-    </p>
+    <div class="form-group">
+        <label asp-for="order.Warranty">Гарантия</label>
+        <select asp-for="order.Warranty" class="form-control">
+            <option value="Есть">Есть</option>
+            <option value="Нет">Нет</option>
+        </select>
+    </div>
     <p>
         <label asp-for="order.Description">Описание</label><br />
-        <input asp-for="order.Description" />
+        <input asp-for="order.Description" class="form-control" />
     </p>
     <p>
         <label asp-for="order.DateIssue">Дата</label><br />
-        <input asp-for="order.DateIssue" />
+        <input asp-for="order.DateIssue" class="form-control" />
     </p>
     <select asp-for="order.ComplaintId" class="form-control"
             asp-items="@Model.ComplaintsSL">
         <option value="">Выбор жалобы</option>
     </select>
     <span asp-validation-for="order.ComplaintId" class="text-danger" />
-    <input type="submit" value="Отправить" />
+    <input type="submit" value="Отправить" class="btn btn-light" />
 </form>   

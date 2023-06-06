@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;   // пространство имен класса ApplicationContext
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OfficeOpenXml;
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);//для DateTime
 var builder = WebApplication.CreateBuilder(args);
@@ -48,6 +49,8 @@ app.MapRazorPages();
 app.UseAuthentication();
 app.UseAuthorization();
 
+
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 using (var scope = app.Services.CreateScope())
 {
     var serviceProvider = scope.ServiceProvider;

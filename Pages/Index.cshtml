@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
 @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-..." crossorigin="anonymous" />*@
 <h2>Список Заказов</h2>
-<p><a asp-page="Create">Создать новый заказ</a></p>
+<p><a asp-page="Create" class="bot1">Создать новый заказ</a></p>
 <table>
-    <tr><th>Наименование услуги</th><th>Клиент</th><th>Мастер</th><th>Дата принятия заказа</th><th>Гарантия</th><th>Описание состояния телефона</th><th>Жалоба</th></tr>
+    <tr><th>Наименование услуги</th><th>Клиент</th><th>Мастер</th><th>Гарантия</th><th>Описание состояния телефона</th><th>Дата принятия заказа</th><th>Жалоба</th><th>Действия</th></tr>
     @foreach (var user in Model.Orders)
     {
             <tr>
@@ -19,17 +19,19 @@
                 <td>@user.Description</td>
                 <td>@user.DateIssue</td>
                 <td>@user.Complaints?.Discription</td>
-                    <td>
-                    <form method="post">
-                        <a asp-page="Edit" asp-route-id="@user.id">Изменить</a>
-                        <button type="submit" asp-page-handler="delete" asp-route-id="@user.id">
-                            Удалить
-                        </button>
-                    </form>
+                <td>
+                    
+                    <form method="post" class="divActions">
+                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@user.id">Изменить</a>
+                    <button class="btn btn-danger" type="submit" asp-page-handler="delete" asp-route-id="@user.id">
+                                Удалить
+                            </button>
+                        </form>
+                 
                 </td>
             </tr>
     }
 </table>
 <form method="post" asp-page-handler="ExportToExcel">
-    <button type="submit" class="btnExport">Экспортировать в Excel</button>
+    <button type="submit" class="bot1">Экспортировать в Excel</button>
 </form>

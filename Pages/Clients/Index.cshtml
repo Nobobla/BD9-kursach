@@ -5,9 +5,9 @@
 @*@Styles.Render("~/Content/css")*@
 <link rel="stylesheet" href="~/css/StyleSheet.css" type="text/css" />
 <h2>Список клиентов</h2>
-<p><a asp-page="Create">Добавить клиента</a></p>
+<p><a class="bot1"  asp-page="Create">Добавить клиента</a></p>
 <table>
-    <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Электронная почта</th><th>Телефон</th></tr>
+    <tr><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Электронная почта</th><th>Телефон</th><th>Действия</th></tr>
     @foreach (var user in Model.Clients)
     {
         <tr>
@@ -17,12 +17,15 @@
             <td>@user.Email</td>
             <td>@user.Phone</td>
             <td>
-                <form method="post">
-                    <a asp-page="Edit" asp-route-id="@user.id">Изменить</a>
-                    <button type="submit" asp-page-handler="delete" asp-route-id="@user.id">
-                        Удалить
-                    </button>
-                </form>
+  
+                    <form method="post" class="divActions">
+                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@user.id">Изменить</a>
+                    <button class="btn btn-danger" type="submit" asp-page-handler="delete" asp-route-id="@user.id">
+                            Удалить
+                        </button>
+                    </form>
+       
+                
             </td>
         </tr>
     }

@@ -6,30 +6,43 @@
 <h2>Редактирование Заказа</h2>
 
 <form method="post">
-    <input name="id" value="@Model.Order?.id" type="hidden" />
+    <select asp-for="Order.ServiceId" class="form-control"
+            asp-items="@Model.ServicesSL">
+        <option value="">Выбор услуги</option>
+    </select>
+    <span asp-validation-for="Order.ServiceId" class="text-danger" />
+
+    <select asp-for="Order.ClientId" class="form-control"
+            asp-items="@Model.ClientsSL">
+        <option value="">Выбор клиента</option>
+    </select>
+    <span asp-validation-for="Order.ClientId" class="text-danger" />
+
+    <select asp-for="Order.EmploeeId" class="form-control"
+            asp-items="@Model.EmpsSL">
+        <option value="">Выбор мастера</option>
+    </select>
+    <span asp-validation-for="Order.EmploeeId" class="text-danger" />
+
+    <div class="form-group">
+        <label asp-for="Order.Warranty">Гарантия</label>
+        <select asp-for="Order.Warranty" class="form-control">
+            <option value="Есть">Есть</option>
+            <option value="Нет">Нет</option>
+        </select>
+    </div>
     <p>
-        <label>Услуга</label><br />
-        <input name="serv" value="@Model.Order?.Service"/>
+        <label asp-for="Order.Description">Описание</label><br />
+        <input asp-for="Order.Description" class="form-control" />
     </p>
     <p>
-        <label>Фамилия клиента</label><br />
-        <input name="name" value="@Model.Order.Client" />
+        <label asp-for="Order.DateIssue">Дата</label><br />
+        <input asp-for="Order.DateIssue" class="form-control" />
     </p>
-    <p>
-        <label>Мастер</label><br />
-        <input name="Ename" value="@Model.Order?.Emp"/>
-    </p>
-    <p>
-        <label>Гарантия</label><br />
-        <input name="war" value="@Model.Order?.Warranty"/>
-    </p>
-    <p>
-        <label>Описание</label><br />
-        <input name="des" value="@Model.Order?.Description" />
-    </p>
-    <p>
-        <label>Жалоба</label><br />
-        <input name="com" value="@Model.Order?.Complaints"/>
-    </p>
+    <select asp-for="Order.ComplaintId" class="form-control"
+            asp-items="@Model.ComplaintsSL">
+        <option value="">Выбор жалобы</option>
+    </select>
+    <span asp-validation-for="Order.ComplaintId" class="text-danger" />
     <input type="submit" value="Сохранить" />
 </form>
