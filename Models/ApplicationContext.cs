@@ -17,7 +17,9 @@ namespace BD9.Models
         public DbSet<ContactInform> Informs => Set<ContactInform>();
         public DbSet<Job> Jobs => Set<Job>();
         public DbSet<Office> Offices => Set<Office>();
-        public DbSet<Emploee> Emps => Set<Emploee>();
+        public DbSet<Emploee> Emps => Set<Emploee>();/// <summary>
+        /// /
+        /// </summary>
         public DbSet<Order> Orders => Set<Order>();
         public DbSet<ServiceModel> ServiceModels => Set<ServiceModel>();
         public DbSet<Complaint> Complaints => Set<Complaint>();
